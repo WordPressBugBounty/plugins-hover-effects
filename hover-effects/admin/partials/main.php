@@ -1,40 +1,35 @@
 <?php if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } ?>
-<div class="wow">
-    <span class="wow-plugin-title"><?php echo $name; ?></span> <span
-            class="wow-plugin-version">(version <?php echo $version; ?>)</span>
-    <ul class="wow-admin-menu">
-        <li><a href='admin.php?page=<?php echo $pluginname; ?>' title="Examples">Examples <i
-                        class="fa fa-hand-pointer-o"></i></a></li>
-        <li><a href='admin.php?page=<?php echo $pluginname; ?>&tool=faq' title="FAQ">FAQ <i class="fa fa-question"></i></a>
-        </li>
-        <li><a href='https://wordpress.org/support/plugin/hover-effects' target="_blank" title="Support page">Support <i
-                        class="fa fa-life-ring"></i></a></li>
-        <li><a href='https://wordpress.org/plugins/hover-effects/#reviews' target="_blank" title="Rate this plugin">Rate
-                Us <i class="fa fa-star"></i></a></li>
-    </ul>
+    <div class="wow">
+        <span class="wow-plugin-title"><?php echo esc_attr( $name ); ?></span> <span
+                class="wow-plugin-version">(version <?php echo esc_attr( $version ); ?>)</span>
+        <ul class="wow-admin-menu">
+            <li>
+                <a href='admin.php?page=<?php echo esc_attr( $pluginname ); ?>' title="Examples">Examples</a>
+            </li>
+            <li>
+                <a href='admin.php?page=<?php echo esc_attr( $pluginname ); ?>&tool=faq' title="FAQ">FAQ</a>
+            </li>
+            <li>
+                <a href='https://wordpress.org/support/plugin/hover-effects' target="_blank" title="Support page">Support</a>
+            </li>
+            <li>
+                <a href='https://wordpress.org/plugins/hover-effects/#reviews' target="_blank" title="Rate this plugin">Rate
+                    Us</a>
+            </li>
+        </ul>
 
-	<?php
-	$tool = ( isset( $_REQUEST["tool"] ) ) ? sanitize_text_field( $_REQUEST["tool"] ) : '';
+		<?php
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$tool = ( isset( $_GET["tool"] ) ) ? sanitize_text_field( wp_unslash( $_GET["tool"] ) ) : '';
 
-	if ( $tool === "" ) {
-		include_once( 'list.php' );
+		if ( $tool === "faq" ) {
+			include_once( 'faq.php' );
+		} else {
+			include_once( 'list.php' );
+		}
 
-		return;
-	}
-	if ( $tool === "items" ) {
-		include_once( 'items.php' );
-
-		return;
-	}
-	if ( $tool === "faq" ) {
-		include_once( 'faq.php' );
-
-		return;
-	}
-	include_once( 'list.php' );
-
-
-	?>
-</div>
+		?>
+    </div>
+<?php

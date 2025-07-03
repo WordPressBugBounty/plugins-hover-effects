@@ -3,9 +3,9 @@ Contributors: Wpcalc, lobov
 Donate link: https://wow-estore.com/
 Tags: hover effects, image hover effects, button hover effects, hover animations
 Requires at least: 4.3
-Tested up to: 6.6
-Requires PHP: 5.3
-Stable tag: 2.1.2
+Tested up to: 6.8
+Requires PHP: 7.4
+Stable tag: 2.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -122,6 +122,9 @@ Under Appearance -> Menus, click 'Screen Options' (top right of screen) and make
 
 
 == Changelog ==
+= 2.1.3 =
+* Fixed: security issue.
+
 = 2.1.2 =
 * Fixed: minor bug with PHP 8.2
 
