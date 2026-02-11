@@ -3,7 +3,7 @@ Contributors: Wpcalc, lobov
 Donate link: https://wow-estore.com/
 Tags: hover effects, image hover effects, button hover effects, hover animations
 Requires at least: 4.3
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 2.1.3
 License: GPLv2 or later
